@@ -7,29 +7,29 @@ import Input from '../Input';
 import { FormHandles } from '@unform/core';
 
 interface AddFood {
-  image: string;
-  name: string;
-  price: string;
-  description: string;
+  image:string;
+  name:string;
+  price:string;
+  description:string;
 }
 
 interface IFood {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  available: boolean;
-  image: string;
+  id:number;
+  name:string;
+  description:string;
+  price:string;
+  available:boolean;
+  image:string;
 }
 
 interface ModalEditFoodProps {
-  isOpen: boolean;
+  isOpen:boolean;
   setIsOpen: () => void;
   handleUpdateFood: (data: AddFood) => void;
-  editingFood: IFood;
+  editingFood: IFood
 }
 
-export default function ModalEditFood({isOpen, setIsOpen, editingFood, handleUpdateFood}: ModalEditFoodProps){
+export default function ModalEditFood({isOpen, setIsOpen, handleUpdateFood, editingFood}:ModalEditFoodProps) {
   const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = async (data: AddFood) => {
